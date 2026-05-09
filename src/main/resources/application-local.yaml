@@ -1,9 +1,0 @@
-spring:
-  application:
-    name: travelAgent
-  ai:
-    dashscope:
-      api-key: sk-de51af95cf5a46ffb50a142e3d41371e
-      chat:
-        options:
-          model: qwen-plus
