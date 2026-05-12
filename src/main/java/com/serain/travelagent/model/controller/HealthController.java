@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @BelongsPackage: com.serain.travelagent.model.controller
  * @Author: Serain
  * @CreateTime: 2026-05-07  11:00
- * @Description: TODO
+ * @Description: 健康检查控制器
  * @Version: 1.0
  */
 @RestController

@@ -30,43 +30,103 @@
         <java.version>21</java.version>
     </properties>
     <dependencies>
+
+        <!-- Spring Boot Actuator: 提供应用监控和管理端点（健康检查、指标等） -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+
+        <!-- Spring Boot Web: 提供Web开发支持，包括RESTful API、Tomcat服务器等 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- Lombok: 简化Java代码，自动生成getter/setter/构造函数等样板代码 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <!-- Spring Boot Test: 提供测试支持，包括JUnit、Mockito等测试框架 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!-- Hutool: Java工具类库，提供字符串、日期、加密、IO等常用工具方法 -->
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
             <version>5.8.40</version>
         </dependency>
+
+        <!-- Knife4j: Swagger/OpenAPI文档增强工具，提供更友好的API文档界面 -->
         <dependency>
             <groupId>com.github.xiaoymin</groupId>
             <artifactId>knife4j-openapi3-jakarta-spring-boot-starter</artifactId>
             <version>4.4.0</version>
         </dependency>
+
+        <!-- Spring AI Alibaba Starter: Spring AI阿里云集成核心依赖，提供AI模型调用、Advisor等基础功能 -->
         <dependency>
             <groupId>com.alibaba.cloud.ai</groupId>
             <artifactId>spring-ai-alibaba-starter</artifactId>
             <version>1.0.0-M6.1</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/com.alibaba/dashscope-sdk-java -->
+
+<!--        &lt;!&ndash; Spring AI Alibaba Agent Framework &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.cloud.ai</groupId>-->
+<!--            <artifactId>spring-ai-alibaba-agent-framework</artifactId>-->
+<!--            <version>1.1.2.0</version>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; DashScope ChatModel 支持（如果使用其他模型，请跳转 Spring AI 文档选择对应的 starter） &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>com.alibaba.cloud.ai</groupId>-->
+<!--            <artifactId>spring-ai-alibaba-starter-dashscope</artifactId>-->
+<!--            <version>1.1.2.0</version>-->
+<!--        </dependency>-->
+
+        <!-- Spring AI BOM: Spring AI依赖版本管理，统一管理Spring AI相关组件的版本 -->
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>dashscope-sdk-java</artifactId>
-            <version>2.19.1</version>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-bom</artifactId>
+            <version>1.0.0</version>
+            <type>pom</type>
+            <scope>import</scope>
         </dependency>
+
+        <!-- JsonSchema Generator: 用于根据 Java 类生成 JSON Schema，常用于 API 文档或数据验证 -->
+        <dependency>
+            <groupId>com.github.victools</groupId>
+            <artifactId>jsonschema-generator</artifactId>
+            <version>4.38.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo</artifactId>
+            <version>5.6.2</version>
+        </dependency>
+
     </dependencies>
+
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
 
     <build>
         <plugins>
