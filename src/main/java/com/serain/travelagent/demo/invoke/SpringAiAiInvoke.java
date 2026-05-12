@@ -12,7 +12,7 @@ import org.springframework.stereotype.Component;
  * @BelongsPackage: com.serain.travelagent.demo.invoke
  * @Author: Serain
  * @CreateTime: 2026-05-09  21:02
- * @Description: TODO
+ * @Description: Spring AI ChatModel 调用示例
  * @Version: 1.0
  */
 // 取消注释即可在 SpringBoot 项目启动时执行

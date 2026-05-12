@@ -3,6 +3,8 @@ spring:
     name: travelAgent
   profiles:
     active: local
+  main:
+    allow-bean-definition-overriding: true  # 允许Bean定义覆盖，解决自动配置冲突
 server:
     port: 8123
     servlet:
