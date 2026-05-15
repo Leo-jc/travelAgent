@@ -4,11 +4,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.document.Document;
 import org.springframework.ai.reader.markdown.MarkdownDocumentReader;
 import org.springframework.ai.reader.markdown.config.MarkdownDocumentReaderConfig;
+import org.springframework.ai.transformer.splitter.TokenTextSplitter;
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.stereotype.Component;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,7 +20,7 @@ import java.util.List;
  * @Description: 旅行文档加载器，用于加载所有MD格式的文档
  * @Version: 1.0
  */
-@Component
+
 @Slf4j
 public class TravelDocumentLoader {
 
@@ -55,9 +55,9 @@ public class TravelDocumentLoader {
                     try {
                         log.info("正在处理文件: {}", resource.getFilename());
                         
-                        // 创建配置对象
+                        // 创建配置对象，设置更大的文档分割
                         MarkdownDocumentReaderConfig config = MarkdownDocumentReaderConfig.builder()
-                                .withHorizontalRuleCreateDocument(true)  // 按水平线分割文档
+                                .withHorizontalRuleCreateDocument(false) // 不按水平线分割，保持文档完整性
                                 .withIncludeCodeBlock(true)              // 包含代码块
                                 .withIncludeBlockquote(true)             // 包含引用块
                                 .build();
@@ -71,7 +71,6 @@ public class TravelDocumentLoader {
                         for (Document doc : docs) {
                             doc.getMetadata().put("filename", filename);
                         }
-                        
                         documents.addAll(docs);
                         log.info("加载文档: {}, 片段数: {}", filename, docs.size());
                     } catch (Exception e) {

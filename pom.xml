@@ -120,6 +120,11 @@
             <version>1.0.0-M6</version>
         </dependency>
 
+        <!-- Spring AI Vector Store: 提供向量存储功能 -->
+        <dependency>
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-vector-store</artifactId>
+        </dependency>
 
     </dependencies>
 
